@@ -79,8 +79,8 @@ public class MainActivityModel {
                     DocumentSnapshot documentSnapshot = documentSnapshots.getDocuments().get(i);
                     restaurant.setName(documentSnapshot.getString("name"));
                     restaurant.setInfo(documentSnapshot.getString("info"));
-                    Double lat = documentSnapshot.getDouble("lat");
-                    Double lng = documentSnapshot.getDouble("lng");
+                    Double lat = Double.valueOf(documentSnapshot.get("lat").toString());
+                    Double lng = Double.valueOf(documentSnapshot.get("lng").toString());
                     restaurant.setLatLng(new LatLng(lat, lng));
                     restaurant.setId(documentSnapshot.getId());
                     restaurants.add(restaurant);
@@ -93,5 +93,9 @@ public class MainActivityModel {
                 presenter.showMessage("Something get wrong...");
             }
         });
+    }
+
+    public void getNewRestaurants() {
+
     }
 }

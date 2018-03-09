@@ -24,7 +24,6 @@ public class MainActivityPresenter extends MvpPresenter<ViewInterface> {
     public MainActivityPresenter() {
         getViewState().showMessage(R.string.app_name);
         model = new MainActivityModel(this);
-        model.getRestaurants();
     }
 
     public void showMessage(String message) {
@@ -56,5 +55,13 @@ public class MainActivityPresenter extends MvpPresenter<ViewInterface> {
 
     public void mapReady(GoogleMap mGoogleMap) {
         getViewState().setGoogleMap(mGoogleMap);
+    }
+
+    public void getNewRestaurants() {
+        model.getNewRestaurants();
+    }
+
+    public void getRestaurants() {
+        model.getRestaurants();
     }
 }

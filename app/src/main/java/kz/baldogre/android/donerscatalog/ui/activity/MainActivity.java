@@ -136,6 +136,12 @@ public class MainActivity extends MvpAppCompatActivity implements ViewInterface 
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        presenter.getRestaurants();
+    }
+
+    @Override
     public void showRestaurants(List<Restaurant> restaurants) {
         for (int i = 0; i < restaurants.size(); i++) {
             Restaurant restaurant = restaurants.get(i);

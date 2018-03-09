@@ -95,4 +95,7 @@
     <string name="bottom_sheet_peek">Bottom sheet peek</string>
     <string name="bottom_sheet_content">Bottom sheet content</string>
     <string name="title_activity_add_new_restaurant">AddNewRestaurantActivity</string>
+    <string name="description">Description</string>
+    <string name="click_to_add_location">Click to add location</string>
+    <string name="title">Title</string>
 </resources>
