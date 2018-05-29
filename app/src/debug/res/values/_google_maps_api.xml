@@ -1,6 +1,0 @@
-<resources>
-    <!--
-    Create your Google Map API KEY on https://console.developers.google.com/
-    -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">API_KEY</string>
-</resources>

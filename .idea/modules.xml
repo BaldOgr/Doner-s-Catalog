@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Doner-s-Catalog.iml" filepath="$PROJECT_DIR$/Doner-s-Catalog.iml" />
       <module fileurl="file://$PROJECT_DIR$/DonersCatalog.iml" filepath="$PROJECT_DIR$/DonersCatalog.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

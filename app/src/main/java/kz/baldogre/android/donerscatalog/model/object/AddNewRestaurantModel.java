@@ -10,7 +10,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-import kz.baldogre.android.donerscatalog.model.DateBaseInstance;
 import kz.baldogre.android.donerscatalog.presentation.presenter.AddNewRestaurantPresenter;
 
 /**
@@ -18,18 +17,18 @@ import kz.baldogre.android.donerscatalog.presentation.presenter.AddNewRestaurant
  */
 
 public class AddNewRestaurantModel {
-    FirebaseFirestore mDataBase;
-    AddNewRestaurantPresenter presenter;
+    private FirebaseFirestore mDataBase;
+    private AddNewRestaurantPresenter presenter;
 
     public AddNewRestaurantModel(AddNewRestaurantPresenter addNewRestaurantPresenter) {
-        this.mDataBase = DateBaseInstance.getDatabaseInstance();
+        this.mDataBase = FirebaseFirestore.getInstance();
         presenter = addNewRestaurantPresenter;
     }
 
     public void addRestaurant(final Restaurant restaurant) {
         Map<String, String> restaurantMap = new HashMap<>();
         restaurantMap.put("name", restaurant.getName());
-        restaurantMap.put("info", restaurant.getInfo());
+        restaurantMap.put("description", restaurant.getDescription());
         restaurantMap.put("lat", String.valueOf(restaurant.getLatLng().latitude));
         restaurantMap.put("lng", String.valueOf(restaurant.getLatLng().longitude));
         mDataBase.collection("restaurants").add(restaurantMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

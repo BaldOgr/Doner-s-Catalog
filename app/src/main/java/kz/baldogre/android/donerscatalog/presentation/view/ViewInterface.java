@@ -25,4 +25,7 @@ public interface ViewInterface extends MvpView {
     void showRestaurants(List<Restaurant> restaurants);
 
     void setGoogleMap(GoogleMap mGoogleMap);
+
+    void showRestaurantFullInfo(Restaurant restaurant);
+
 }
