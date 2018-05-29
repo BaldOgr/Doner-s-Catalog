@@ -1,9 +1,12 @@
 package kz.baldogre.android.donerscatalog.model.object;
 
+import android.net.Uri;
+
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by lol on 08.03.2018.
@@ -17,6 +20,7 @@ public class Restaurant {
     private String description;
     private LatLng latLng;
     private String id;
+    private List<Uri> images;
 
     public ArrayList<Review> getReviews() {
         return reviews;
@@ -78,5 +82,13 @@ public class Restaurant {
                 Double.parseDouble(documentSnapshot.getString(RESTAURANT_LONGITUDE)));
         restaurant.setLatLng(latLng);
         return restaurant;
+    }
+
+    public void setImages(List<Uri> images) {
+        this.images = images;
+    }
+
+    public List<Uri> getImages() {
+        return images;
     }
 }
